@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
-import { Card } from 'semantic-ui-react'
+import { Card, Button } from 'semantic-ui-react'
 
 const PokemonCard = props => {
 
   const [isFront, setIsFront] = useState(true)
+  const [showMoves, setShowMoves] = useState(false);
   
 
   return (
@@ -21,6 +22,15 @@ const PokemonCard = props => {
             {props.stats.find(stat => stat.name === 'hp').value}
           </span>
         </div>
+      </div>
+      <div class="moves-container">
+        <Button onClick={() => setShowMoves(!showMoves)}>{showMoves ? "Hide Moves" : "Show Moves"}</Button>
+        <ul>
+          { showMoves ? 
+            (props.moves.length > 0 ? props.moves.map(move => <li>{move}</li>) : <li>No Moves</li>) :
+            null
+          }
+        </ul>
       </div>
     </Card>
   )

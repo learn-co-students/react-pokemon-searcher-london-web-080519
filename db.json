@@ -7333,6 +7333,7 @@
         "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png",
         "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
       },
+      "moves": [],
       "stats": [
         {
           "name": "hp",
@@ -7347,6 +7348,7 @@
         "back": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/152.png",
         "front": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/152.png"
       },
+      "moves": [],
       "stats": [
         {
           "name": "hp",
