@@ -41,7 +41,20 @@ class PokemonPage extends React.Component {
 				back: event.target.backUrl.value,
 			},
 		};
-		this.setState({ pokemon: [...this.state.pokemon, newPokemon] });
+
+		fetch("http://localhost:3000/pokemon", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(newPokemon),
+		}).then(ans =>
+			fetch("http://localhost:3000/pokemon")
+				.then(resp => resp.json())
+				.then(pokemon => this.setState({ pokemon })),
+		);
+
+		// this.setState({ pokemon: [...this.state.pokemon, newPokemon] });
 
 		event.target.name.value = "";
 		event.target.hp.value = "";
