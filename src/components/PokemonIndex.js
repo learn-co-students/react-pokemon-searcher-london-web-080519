@@ -4,20 +4,22 @@ import PokemonForm from './PokemonForm'
 import { Search } from 'semantic-ui-react'
 import _ from 'lodash'
 
-class PokemonPage extends React.Component {
+class PokemonIndex extends React.Component {
+
+
   render() {
     return (
       <div>
         <h1>Pokemon Searcher</h1>
         <br />
-        <PokemonForm />
+        <PokemonForm addNewPokemon={this.props.addNewPokemon}/>
         <br />
-        <Search onSearchChange={_.debounce(() => console.log('🤔'), 500)} showNoResults={false} />
+        <Search onSearchChange={this.props.changeSearchTerms} showNoResults={false} />
         <br />
-        <PokemonCollection />
+        <PokemonCollection pokemons={this.props.pokemons}  />
       </div>
     )
   }
 }
 
-export default PokemonPage
+export default PokemonIndex
